@@ -3,8 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorial", "Tutorial", "{B9DCC93D-7F67-4730-8C2C-60C4CBE43907}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XAudio2", "XAudio2", "{3ECF6220-0690-4CF6-B845-DBFE6B878149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XInput", "XInput", "{C274E717-42AE-404A-BA84-73E145012C99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{2DA1DA42-A9AA-4E2C-BBA8-D8CF326A1DB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial-Tutorial01", "src\Tutorial-Tutorial01\Tutorial-Tutorial01.vcxproj", "{84C9478F-F34C-4DF6-9F2D-7993A18F05FB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84C9478F-F34C-4DF6-9F2D-7993A18F05FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{84C9478F-F34C-4DF6-9F2D-7993A18F05FB}.Debug|Win32.Build.0 = Debug|Win32
+		{84C9478F-F34C-4DF6-9F2D-7993A18F05FB}.Release|Win32.ActiveCfg = Release|Win32
+		{84C9478F-F34C-4DF6-9F2D-7993A18F05FB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84C9478F-F34C-4DF6-9F2D-7993A18F05FB} = {B9DCC93D-7F67-4730-8C2C-60C4CBE43907}
 	EndGlobalSection
 EndGlobal

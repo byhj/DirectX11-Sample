@@ -1,7 +1,11 @@
-#include "d3dShader.h"
+#include "Shader.h"
 
 namespace byhj
 {
+
+namespace d3d
+{
+
 
 void Shader::init(ID3D11Device *pD3D11Device, HWND hWnd)
 {
@@ -239,6 +243,6 @@ void Shader::end()
 	hWnd = 0;
 }
 
-
+}
 
 }

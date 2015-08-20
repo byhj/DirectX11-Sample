@@ -11,12 +11,9 @@
 
 #include <WindowsX.h>
 #include <windows.h>
-#include <d3dx11.h>
 #include <dxgi.h>
 #include <d3d11.h>
-#include <xnamath.h>
 #include <d3dcommon.h>
-#include <D3DX11async.h>
 
 #include <ctime>
 #include <algorithm>
@@ -27,17 +24,21 @@
 
 #include "d3dDebug.h"
 
-namespace byhj
+namespace byhj  
 {
 
-class D3DApp
+namespace d3d 
+{
+
+
+class App
 {
 public:
-	D3DApp() :m_AppName(L"DirectX11: "), m_WndClassName(L"D3DWindow")
+	App() :m_AppName(L"DirectX11: "), m_WndClassName(L"D3DWindow")
 	{
 
 	}
-	virtual ~D3DApp() {}
+	virtual ~App() {}
 
 	void InitApp();
 	int Run();
@@ -77,6 +78,8 @@ private:
 	HINSTANCE m_hInstance;
 	HWND      m_hWnd;
 };
+
+}
 
 }
 #endif

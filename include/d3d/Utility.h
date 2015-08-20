@@ -2,11 +2,15 @@
 #define D3DUTILITY_H
 
 #include <windows.h>
-#include <xnamath.h>
+#include <DirectXMath.h>
+
+using namespace DirectX;
 
 namespace byhj
 {
 
+namespace d3d
+{
 
 struct MatrixBuffer
 {
@@ -14,6 +18,8 @@ struct MatrixBuffer
 	XMFLOAT4X4 view;
 	XMFLOAT4X4 proj;
 };
+
+}
 
 }
 
