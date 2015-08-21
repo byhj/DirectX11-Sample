@@ -22,7 +22,6 @@
 #include <fstream>
 #include <vector>
 
-#include "d3dDebug.h"
 
 namespace byhj  
 {
@@ -44,10 +43,10 @@ public:
 	int Run();
 	LRESULT CALLBACK MessageHandler(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-	virtual	void v_Init()  = 0;
-	virtual void v_Shutdown() = 0;
+	virtual	void v_Init()     = 0;
+	virtual void v_Update()   = 0;
 	virtual void v_Render()   = 0;
-	virtual void v_Update() {}
+	virtual void v_Shutdown() = 0;
 
 	// Convenience overrides for handling mouse input.
 	virtual void v_OnMouseDown(WPARAM btnState, int x, int y){ }
@@ -69,7 +68,8 @@ protected:
 	//void      GetVideoCardInfo(char &, int &);
 	HINSTANCE GetAppInst() const { return m_hInstance; }
 	HWND      GetHwnd()    const { return m_hWnd; }
-	float     GetAspect()  const { return (float)m_ScreenWidth / m_ScreenHeight; }
+	float     GetAspect()  const { return static_cast<float>(m_ScreenWidth)
+		                                  / static_cast<float>(m_ScreenHeight); }
 
 private:
 	bool init_window();

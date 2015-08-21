@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{84C9478F-F34C-4DF6-9F2D-7993A18F05FB}</ProjectGuid>
-    <RootNamespace>TutorialTutorial01</RootNamespace>
+    <ProjectGuid>{4164234A-A33B-4897-9729-202D1FBAED9B}</ProjectGuid>
+    <RootNamespace>TutorialTutorial02</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -66,14 +66,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\include\d3d\App.cpp" />
+    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
     <ClCompile Include="..\..\include\d3d\Utility.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="triangle.cpp" />
     <ClCompile Include="Tutorial01.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\d3d\App.h" />
+    <ClInclude Include="..\..\include\d3d\Shader.h" />
     <ClInclude Include="..\..\include\d3d\Utility.h" />
     <ClInclude Include="RenderSystem.h" />
+    <ClInclude Include="triangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangle.psh" />
+    <None Include="triangle.vsh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

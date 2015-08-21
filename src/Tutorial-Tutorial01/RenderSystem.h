@@ -4,25 +4,23 @@
 #include <windows.h>
 #include <d3d11.h>
 #include <DirectXColors.h>
+#include "d3d/App.h"
 
 using namespace DirectX;
 
 namespace byhj
 {
 
-class RenderSystem
+class RenderSystem : public byhj::d3d::App
 {
 
 public:
-	void Init();
-	void Render();
-	void Shutdown();
+	void v_Init()     override;
+	void v_Update()   override;
+	void v_Render()   override;
+	void v_Shutdown() override;
 
 private:
-	void init_window();
-	void init_device();
-
-
 
 };
 

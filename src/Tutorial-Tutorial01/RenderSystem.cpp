@@ -3,33 +3,25 @@
 namespace byhj
 {
 
-void RenderSystem::Init()
-{
-	init_window();
-	init_device();
-
-}
-
-void RenderSystem::Render()
+void RenderSystem::v_Init()
 {
 
 }
 
-void RenderSystem::Shutdown()
+void RenderSystem::v_Update()
 {
 
 }
 
-void RenderSystem::init_window()
+void RenderSystem::v_Render()
 {
 
 }
 
-void RenderSystem::init_device()
+void RenderSystem::v_Shutdown()
 {
 
 }
-
 
 
 }

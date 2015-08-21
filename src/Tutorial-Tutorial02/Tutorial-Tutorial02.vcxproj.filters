@@ -14,20 +14,26 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Framework">
-      <UniqueIdentifier>{539a6497-0859-4534-863b-131697dad737}</UniqueIdentifier>
+      <UniqueIdentifier>{5a480d58-608a-4c7a-ae74-3a79407168b0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tutorial01.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tutorial01.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\include\d3d\App.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="..\..\include\d3d\Utility.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\d3d\Shader.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,5 +47,19 @@
     <ClInclude Include="..\..\include\d3d\Utility.h">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\d3d\Shader.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangle.psh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="triangle.vsh">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

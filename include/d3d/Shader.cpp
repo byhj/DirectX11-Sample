@@ -1,4 +1,5 @@
 #include "Shader.h"
+#include <d3dcompiler.h>
 
 namespace byhj
 {
@@ -40,8 +41,8 @@ bool Shader::attachVS(WCHAR* Filename,  D3D11_INPUT_ELEMENT_DESC pInputLayoutDes
 	ID3D10Blob* errorMessage = 0;
 	ID3D10Blob* VertexShaderBuffer = 0;
 
-	result = D3DX11CompileFromFile(Filename, NULL, NULL, "VS", "vs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-		&VertexShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(Filename, NULL, NULL, "VS", "vs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 
+		                        0, &VertexShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		if(errorMessage)
@@ -78,8 +79,8 @@ bool Shader::attachHS(WCHAR* Filename)
 	ID3D10Blob* errorMessage = 0;
 	ID3D10Blob* HullShaderBuffer = 0;
 
-	result = D3DX11CompileFromFile(Filename, NULL, NULL, "HS", "hs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-		&HullShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(Filename, NULL, NULL, "HS", "hs_5_0", D3D10_SHADER_ENABLE_STRICTNESS,
+		                        0, &HullShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		if(errorMessage)
@@ -107,8 +108,8 @@ bool Shader::attachDS(WCHAR* Filename)
 	ID3D10Blob* errorMessage = 0;
 	ID3D10Blob* DomainShaderBuffer = 0;
 
-	result = D3DX11CompileFromFile(Filename, NULL, NULL, "DS", "ds_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-		&DomainShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(Filename, NULL, NULL, "DS", "ds_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 
+		                        0, &DomainShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		if(errorMessage)
@@ -136,8 +137,8 @@ bool Shader::attachGS(WCHAR* Filename)
 	ID3D10Blob* errorMessage = 0;
 	ID3D10Blob* GeometryShaderBuffer = 0;
 
-	result = D3DX11CompileFromFile(Filename, NULL, NULL, "GS", "gs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-		&GeometryShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(Filename, NULL, NULL, "GS", "gs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0,
+		                           &GeometryShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		if(errorMessage)
@@ -166,8 +167,8 @@ bool Shader::attachCS(WCHAR* Filename)
 	ID3D10Blob* errorMessage = 0;
 	ID3D10Blob* ComputeShaderBuffer = 0;
 
-	result = D3DX11CompileFromFile(Filename, NULL, NULL, "CS", "cs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-		&ComputeShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(Filename, NULL, NULL, "CS", "cs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0,
+		                         &ComputeShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		if(errorMessage)
@@ -196,8 +197,8 @@ bool Shader::attachPS(WCHAR* Filename)
 	ID3D10Blob* errorMessage = 0;
 	ID3D10Blob* PixelShaderBuffer = 0;
 
-	result = D3DX11CompileFromFile(Filename, NULL, NULL, "PS", "ps_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-		&PixelShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(Filename, NULL, NULL, "PS", "ps_5_0", D3D10_SHADER_ENABLE_STRICTNESS,
+	                            	0, &PixelShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		if(errorMessage)
