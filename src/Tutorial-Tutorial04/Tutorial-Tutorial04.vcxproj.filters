@@ -35,17 +35,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cube.vsh">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="cube.psh">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tutorial03.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -61,5 +55,13 @@
     <ClCompile Include="cube.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tutorial04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="cube.vsh">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

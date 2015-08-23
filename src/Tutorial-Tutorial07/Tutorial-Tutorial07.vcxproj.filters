@@ -13,5 +13,62 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{56d0c17b-4df6-4ecf-a77f-c360129e1bf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectXTK">
+      <UniqueIdentifier>{efda8151-c85e-4d77-bcc0-afae4c01e79f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\d3d\App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\d3d\Shader.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\d3d\Utility.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cube.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tutorial07.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\DirectXTK\DDSTextureLoader.cpp">
+      <Filter>DirectXTK</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\d3d\App.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\d3d\Shader.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\d3d\Utility.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DirectXTK\DDSTextureLoader.h">
+      <Filter>DirectXTK</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cube.psh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cube.vsh">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

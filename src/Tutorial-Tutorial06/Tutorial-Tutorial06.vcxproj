@@ -19,7 +19,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -33,6 +33,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\DirectX11-Sample.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -64,6 +65,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\include\d3d\App.cpp" />
+    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
+    <ClCompile Include="..\..\include\d3d\Utility.cpp" />
+    <ClCompile Include="cube.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="Tutorial06.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\d3d\App.h" />
+    <ClInclude Include="..\..\include\d3d\Shader.h" />
+    <ClInclude Include="..\..\include\d3d\Utility.h" />
+    <ClInclude Include="cube.h" />
+    <ClInclude Include="RenderSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="cube.psh">
+      <FileType>Document</FileType>
+    </Text>
+    <Text Include="cube.vsh">
+      <FileType>Document</FileType>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

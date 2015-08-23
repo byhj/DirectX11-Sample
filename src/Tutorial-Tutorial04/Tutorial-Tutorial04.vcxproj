@@ -73,7 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cube.psh" />
-    <None Include="cube.vsh" />
+    <FxCompile Include="cube.vsh">
+      <FileType>Document</FileType>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\include\d3d\App.cpp" />
@@ -81,7 +83,7 @@
     <ClCompile Include="..\..\include\d3d\Utility.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="cube.cpp" />
-    <ClCompile Include="Tutorial03.cpp" />
+    <ClCompile Include="Tutorial04.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -39,7 +39,8 @@ HRESULT Shader::CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LP
 	{
 		if (pErrorBlob)
 		{
-			OutputDebugStringA(reinterpret_cast<const char*>(pErrorBlob->GetBufferPointer()));
+			//OutputDebugStringA(reinterpret_cast<const char*>(pErrorBlob->GetBufferPointer()));
+			std::cout << reinterpret_cast<const char*>(pErrorBlob->GetBufferPointer()) << std::endl;
 			pErrorBlob->Release();
 		}
 		return hr;
