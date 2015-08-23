@@ -1,32 +1,32 @@
-#include "triangle.h"
+#include "Cube.h"
 #include <vector>
 
 namespace byhj
 {
 
-Triangle::Triangle()
+Cube::Cube()
 {
 
 }
 
-Triangle::~Triangle()
+Cube::~Cube()
 {
 
 }
 
-void Triangle::Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext, HWND hWnd)
+void Cube::Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext, HWND hWnd)
 {
 
 	init_buffer(pD3D11Device, pD3D11DeviceContext);
 	init_shader(pD3D11Device, hWnd);
 }
 
-void Triangle::Update()
+void Cube::Update()
 {
 
 }
 
-void Triangle::Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::MatrixBuffer &matrix)
+void Cube::Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::MatrixBuffer &matrix)
 {
 
 	cbMatrix.model = matrix.model;
@@ -36,13 +36,13 @@ void Triangle::Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::Matri
 	pD3D11DeviceContext->VSSetConstantBuffers(0, 1, &m_pMVPBuffer);
 	pD3D11DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	TriangleShader.use(pD3D11DeviceContext);
-	pD3D11DeviceContext->DrawIndexed(3, 0, 0);
+	CubeShader.use(pD3D11DeviceContext);
+	pD3D11DeviceContext->DrawIndexed(m_IndexCount, 0, 0);
 
 
 }
 
-void Triangle::Shutdown()
+void Cube::Shutdown()
 {
 	ReleaseCOM(m_pInputLayout)
 	ReleaseCOM(m_pVS)
@@ -53,17 +53,31 @@ void Triangle::Shutdown()
 
 }
 
-void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext)
+void Cube::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext)
 {
 	HRESULT hr;
 
 	///////////////////////////Index Buffer ////////////////////////////////
-	m_VertexCount = 3;
+	m_VertexCount = 8;
 	Vertex *VertexData = new Vertex[m_VertexCount];
 
-	VertexData[0].Position = XMFLOAT3(-1.0f, -1.0f, 0.0f);  // Bottom left.
-	VertexData[1].Position = XMFLOAT3(0.0f, 1.0f, 0.0f);  // Top middle.
-	VertexData[2].Position = XMFLOAT3(1.0f, -1.0f, 0.0f);  // Bottom right.
+	VertexData[0].Position =  XMFLOAT3(-1.0f, 1.0f, -1.0f);
+	VertexData[1].Position =  XMFLOAT3(1.0f, 1.0f, -1.0f);
+	VertexData[2].Position =  XMFLOAT3(1.0f, 1.0f, 1.0f);
+	VertexData[3].Position =  XMFLOAT3(-1.0f, 1.0f, 1.0f);
+	VertexData[4].Position =  XMFLOAT3(-1.0f, -1.0f, -1.0f);
+	VertexData[5].Position =  XMFLOAT3(1.0f, -1.0f, -1.0f);
+	VertexData[6].Position =  XMFLOAT3(1.0f, -1.0f, 1.0f);
+	VertexData[7].Position =  XMFLOAT3(-1.0f, -1.0f, 1.0f);
+
+	VertexData[0].Color = XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f);
+	VertexData[1].Color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
+	VertexData[2].Color = XMFLOAT4(0.0f, 1.0f, 1.0f, 1.0f);
+	VertexData[3].Color = XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f);
+	VertexData[4].Color = XMFLOAT4(1.0f, 0.0f, 1.0f, 1.0f);
+	VertexData[5].Color = XMFLOAT4(1.0f, 1.0f, 0.0f, 1.0f);
+	VertexData[6].Color = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	VertexData[7].Color = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
 
 	// Set up the description of the static vertex buffer.
 	D3D11_BUFFER_DESC VertexBufferDesc;
@@ -85,11 +99,27 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 
 
 	/////////////////////////////////Index Buffer ///////////////////////////////////////
-	m_IndexCount = 3;
-	unsigned long *IndexData= new unsigned long[m_IndexCount];
-	IndexData[0] = 0;  // Bottom left.
-	IndexData[1] = 1;  // Top middle.
-	IndexData[2] = 2;  // Bottom right.
+	m_IndexCount = 36;
+	unsigned long IndexData[] =
+	{
+		3, 1, 0,
+		2, 1, 3,
+
+		0, 5, 4,
+		1, 5, 0,
+
+		3, 4, 7,
+		0, 4, 3,
+
+		1, 6, 5,
+		2, 6, 1,
+
+		2, 7, 6,
+		3, 7, 2,
+
+		6, 4, 5,
+		7, 4, 6,
+	};
 
 	// Set up the description of the static index buffer.
 	D3D11_BUFFER_DESC IndexBufferDesc;
@@ -113,8 +143,6 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 	// Release the arrays now that the vertex and index buffers have been created and loaded.
 	delete[] VertexData;
 	VertexData = 0;
-	delete[] IndexData;
-	IndexData = 0;
 
 	// Set vertex buffer stride and offset.=
 	unsigned int stride;
@@ -123,7 +151,6 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 	offset = 0;
 	pD3D11DeviceContext->IASetVertexBuffers(0, 1, &m_pVertexBuffer, &stride, &offset);
 	pD3D11DeviceContext->IASetIndexBuffer(m_pIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
-	pD3D11DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	////////////////////////////////Const Buffer//////////////////////////////////////
 
@@ -139,7 +166,7 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 
 }
 
-void Triangle::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
+void Cube::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
 {
     std::vector<D3D11_INPUT_ELEMENT_DESC> vInputLayoutDesc;
 	D3D11_INPUT_ELEMENT_DESC inputLayoutDesc;
@@ -163,10 +190,10 @@ void Triangle::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
 	vInputLayoutDesc.push_back(inputLayoutDesc);
 
 
-	TriangleShader.init(pD3D11Device, hWnd, vInputLayoutDesc);
-	TriangleShader.attachVS(L"triangle.vsh", "VS", "vs_4_0");
-	TriangleShader.attachPS(L"triangle.psh", "PS", "ps_4_0");
-	TriangleShader.end();
+	CubeShader.init(pD3D11Device, hWnd, vInputLayoutDesc);
+	CubeShader.attachVS(L"Cube.vsh", "VS", "vs_5_0");
+	CubeShader.attachPS(L"Cube.psh", "PS", "ps_5_0");
+	CubeShader.end();
 }
 
 

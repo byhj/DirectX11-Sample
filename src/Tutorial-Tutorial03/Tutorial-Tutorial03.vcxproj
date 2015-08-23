@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4164234A-A33B-4897-9729-202D1FBAED9B}</ProjectGuid>
-    <RootNamespace>TutorialTutorial02</RootNamespace>
+    <ProjectGuid>{FCDFA1A6-0820-4200-9912-50242F73E60B}</ProjectGuid>
+    <RootNamespace>TutorialTutorial03</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -65,14 +65,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\include\d3d\App.cpp" />
-    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
-    <ClCompile Include="..\..\include\d3d\Utility.cpp" />
-    <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="triangle.cpp" />
-    <ClCompile Include="Tutorial02.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\include\d3d\App.h" />
     <ClInclude Include="..\..\include\d3d\Shader.h" />
     <ClInclude Include="..\..\include\d3d\Utility.h" />
@@ -80,14 +72,16 @@
     <ClInclude Include="triangle.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="triangle.psh">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </Text>
-    <FxCompile Include="triangle.vsh">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </FxCompile>
+    <None Include="triangle.psh" />
+    <None Include="triangle.vsh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\d3d\App.cpp" />
+    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
+    <ClCompile Include="..\..\include\d3d\Utility.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="triangle.cpp" />
+    <ClCompile Include="Tutorial03.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

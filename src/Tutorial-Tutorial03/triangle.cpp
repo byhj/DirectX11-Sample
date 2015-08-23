@@ -62,8 +62,11 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 	Vertex *VertexData = new Vertex[m_VertexCount];
 
 	VertexData[0].Position = XMFLOAT3(-1.0f, -1.0f, 0.0f);  // Bottom left.
+	VertexData[0].Color    = XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f);
 	VertexData[1].Position = XMFLOAT3(0.0f, 1.0f, 0.0f);  // Top middle.
+	VertexData[1].Color    = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 	VertexData[2].Position = XMFLOAT3(1.0f, -1.0f, 0.0f);  // Bottom right.
+	VertexData[2].Color    = XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f);
 
 	// Set up the description of the static vertex buffer.
 	D3D11_BUFFER_DESC VertexBufferDesc;
@@ -164,8 +167,8 @@ void Triangle::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
 
 
 	TriangleShader.init(pD3D11Device, hWnd, vInputLayoutDesc);
-	TriangleShader.attachVS(L"triangle.vsh", "VS", "vs_4_0");
-	TriangleShader.attachPS(L"triangle.psh", "PS", "ps_4_0");
+	TriangleShader.attachVS(L"triangle.vsh", "VS", "vs_5_0");
+	TriangleShader.attachPS(L"triangle.psh", "PS", "ps_5_0");
 	TriangleShader.end();
 }
 

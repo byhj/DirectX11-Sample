@@ -15,6 +15,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial-Tutorial01", "src\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial-Tutorial02", "src\Tutorial-Tutorial02\Tutorial-Tutorial02.vcxproj", "{4164234A-A33B-4897-9729-202D1FBAED9B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial-Tutorial03", "src\Tutorial-Tutorial03\Tutorial-Tutorial03.vcxproj", "{FCDFA1A6-0820-4200-9912-50242F73E60B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial-Tutorial04", "src\Tutorial-Tutorial04\Tutorial-Tutorial04.vcxproj", "{03629D76-2465-4710-8FEC-49CA72DC1CB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -29,6 +33,14 @@ Global
 		{4164234A-A33B-4897-9729-202D1FBAED9B}.Debug|Win32.Build.0 = Debug|Win32
 		{4164234A-A33B-4897-9729-202D1FBAED9B}.Release|Win32.ActiveCfg = Release|Win32
 		{4164234A-A33B-4897-9729-202D1FBAED9B}.Release|Win32.Build.0 = Release|Win32
+		{FCDFA1A6-0820-4200-9912-50242F73E60B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FCDFA1A6-0820-4200-9912-50242F73E60B}.Debug|Win32.Build.0 = Debug|Win32
+		{FCDFA1A6-0820-4200-9912-50242F73E60B}.Release|Win32.ActiveCfg = Release|Win32
+		{FCDFA1A6-0820-4200-9912-50242F73E60B}.Release|Win32.Build.0 = Release|Win32
+		{03629D76-2465-4710-8FEC-49CA72DC1CB7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03629D76-2465-4710-8FEC-49CA72DC1CB7}.Debug|Win32.Build.0 = Debug|Win32
+		{03629D76-2465-4710-8FEC-49CA72DC1CB7}.Release|Win32.ActiveCfg = Release|Win32
+		{03629D76-2465-4710-8FEC-49CA72DC1CB7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{84C9478F-F34C-4DF6-9F2D-7993A18F05FB} = {B9DCC93D-7F67-4730-8C2C-60C4CBE43907}
 		{4164234A-A33B-4897-9729-202D1FBAED9B} = {B9DCC93D-7F67-4730-8C2C-60C4CBE43907}
+		{FCDFA1A6-0820-4200-9912-50242F73E60B} = {B9DCC93D-7F67-4730-8C2C-60C4CBE43907}
+		{03629D76-2465-4710-8FEC-49CA72DC1CB7} = {B9DCC93D-7F67-4730-8C2C-60C4CBE43907}
 	EndGlobalSection
 EndGlobal

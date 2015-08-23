@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4164234A-A33B-4897-9729-202D1FBAED9B}</ProjectGuid>
-    <RootNamespace>TutorialTutorial02</RootNamespace>
+    <ProjectGuid>{03629D76-2465-4710-8FEC-49CA72DC1CB7}</ProjectGuid>
+    <RootNamespace>TutorialTutorial04</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -65,29 +65,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\include\d3d\App.cpp" />
-    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
-    <ClCompile Include="..\..\include\d3d\Utility.cpp" />
-    <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="triangle.cpp" />
-    <ClCompile Include="Tutorial02.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\include\d3d\App.h" />
     <ClInclude Include="..\..\include\d3d\Shader.h" />
     <ClInclude Include="..\..\include\d3d\Utility.h" />
     <ClInclude Include="RenderSystem.h" />
-    <ClInclude Include="triangle.h" />
+    <ClInclude Include="cube.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="triangle.psh">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </Text>
-    <FxCompile Include="triangle.vsh">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </FxCompile>
+    <None Include="cube.psh" />
+    <None Include="cube.vsh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\d3d\App.cpp" />
+    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
+    <ClCompile Include="..\..\include\d3d\Utility.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="cube.cpp" />
+    <ClCompile Include="Tutorial03.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

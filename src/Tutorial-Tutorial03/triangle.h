@@ -32,6 +32,7 @@ private:
 	struct Vertex
 	{
 		XMFLOAT3 Position;
+		XMFLOAT4 Color;
 	};
 
 	ID3D11InputLayout  *m_pInputLayout       = nullptr;

@@ -1,5 +1,5 @@
-#ifndef TRIANGLE_H
-#define TRIANGLE_H
+#ifndef Cube_H
+#define Cube_H
 
 #include <d3d11.h>
 #include <DirectXMath.h>
@@ -12,12 +12,12 @@ using namespace DirectX;
 namespace byhj
 {
 
-class Triangle
+class Cube
 {
 
 public:
-	Triangle();
-	~Triangle();
+	Cube();
+	~Cube();
 
 public:
 	void Update();
@@ -32,6 +32,7 @@ private:
 	struct Vertex
 	{
 		XMFLOAT3 Position;
+		XMFLOAT4 Color;
 	};
 
 	ID3D11InputLayout  *m_pInputLayout       = nullptr;
@@ -44,7 +45,7 @@ private:
 	int m_IndexCount = 0;
 	int m_VertexCount = 0;
 	d3d::MatrixBuffer cbMatrix;
-	d3d::Shader TriangleShader;
+	d3d::Shader CubeShader;
 };
 
 
