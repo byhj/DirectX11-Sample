@@ -55,11 +55,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="triangle.psh">
+    <FxCompile Include="triangle.psh">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="triangle.vsh">
+    </FxCompile>
+    <FxCompile Include="triangle.vsh">
       <Filter>Resource Files</Filter>
-    </None>
+    </FxCompile>
   </ItemGroup>
 </Project>

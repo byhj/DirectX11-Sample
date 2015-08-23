@@ -1,4 +1,5 @@
 #include "triangle.h"
+#include <vector>
 
 namespace byhj
 {
@@ -143,27 +144,31 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 
 void Triangle::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
 {
-    D3D11_INPUT_ELEMENT_DESC pInputLayoutDesc[2];
-	pInputLayoutDesc[0].SemanticName         = "POSITION";
-	pInputLayoutDesc[0].SemanticIndex        = 0;
-	pInputLayoutDesc[0].Format               = DXGI_FORMAT_R32G32B32_FLOAT;
-	pInputLayoutDesc[0].InputSlot            = 0;
-	pInputLayoutDesc[0].AlignedByteOffset    = 0;
-	pInputLayoutDesc[0].InputSlotClass       = D3D11_INPUT_PER_VERTEX_DATA;
-	pInputLayoutDesc[0].InstanceDataStepRate = 0;
+    std::vector<D3D11_INPUT_ELEMENT_DESC> vInputLayoutDesc;
+	D3D11_INPUT_ELEMENT_DESC inputLayoutDesc;
 
-	pInputLayoutDesc[1].SemanticName         = "COLOR";
-	pInputLayoutDesc[1].SemanticIndex        = 0;
-	pInputLayoutDesc[1].Format               = DXGI_FORMAT_R32G32B32A32_FLOAT;
-	pInputLayoutDesc[1].InputSlot            = 0;
-	pInputLayoutDesc[1].AlignedByteOffset    = D3D11_APPEND_ALIGNED_ELEMENT;
-	pInputLayoutDesc[1].InputSlotClass       = D3D11_INPUT_PER_VERTEX_DATA;
-	pInputLayoutDesc[1].InstanceDataStepRate = 0;
-	unsigned numElements = ARRAYSIZE(pInputLayoutDesc);
+	inputLayoutDesc.SemanticName         = "POSITION";
+	inputLayoutDesc.SemanticIndex        = 0;
+	inputLayoutDesc.Format               = DXGI_FORMAT_R32G32B32_FLOAT;
+	inputLayoutDesc.InputSlot            = 0;
+	inputLayoutDesc.AlignedByteOffset    = 0;
+	inputLayoutDesc.InputSlotClass       = D3D11_INPUT_PER_VERTEX_DATA;
+	inputLayoutDesc.InstanceDataStepRate = 0;
+	vInputLayoutDesc.push_back(inputLayoutDesc);
+	
+	inputLayoutDesc.SemanticName         = "COLOR";
+	inputLayoutDesc.SemanticIndex        = 0;
+	inputLayoutDesc.Format               = DXGI_FORMAT_R32G32B32A32_FLOAT;
+	inputLayoutDesc.InputSlot            = 0;
+	inputLayoutDesc.AlignedByteOffset    = D3D11_APPEND_ALIGNED_ELEMENT;
+	inputLayoutDesc.InputSlotClass       = D3D11_INPUT_PER_VERTEX_DATA;
+	inputLayoutDesc.InstanceDataStepRate = 0;
+	vInputLayoutDesc.push_back(inputLayoutDesc);
 
-	TriangleShader.init(pD3D11Device, hWnd);
-	TriangleShader.attachVS(L"triangle.vsh", pInputLayoutDesc, numElements);
-	TriangleShader.attachPS(L"triangle.psh");
+
+	TriangleShader.init(pD3D11Device, hWnd, vInputLayoutDesc);
+	TriangleShader.attachVS(L"triangle.vsh", "VS", "vs_5_0");
+	TriangleShader.attachPS(L"triangle.psh", "PS", "ps_5_0");
 	TriangleShader.end();
 }
 

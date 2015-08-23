@@ -1,14 +1,9 @@
 
-struct MatrixBuffer
+cbuffer cbMatrix : register(b0)
 {
    float4x4 model;
    float4x4 view;
    float4x4 proj;
-};
-
-cbuffer cbMatrix : register(b0)
-{
-	MatrixBuffer g_Mat;
 };
 
 struct VS_IN
@@ -23,13 +18,13 @@ struct VS_OUT
     float4 Color : COLOR0;
 };
 
-VS_OUT VS( VS_IN vs_in)
+VS_OUT VS( VS_IN vs_in )
 {	
  
    VS_OUT vs_out;
-   vs_out.Pos = mul(vs_in.Pos, g_Mat.model);
-   vs_out.Pos = mul(vs_out.Pos, g_Mat.view);
-   vs_out.Pos = mul(vs_out.Pos, g_Mat.proj);
+   vs_out.Pos = mul(vs_in.Pos,  model);
+   vs_out.Pos = mul(vs_out.Pos, view);
+   vs_out.Pos = mul(vs_out.Pos, proj);
 
    vs_out.Color = vs_in.Color;
  
