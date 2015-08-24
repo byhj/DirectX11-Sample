@@ -72,9 +72,13 @@
     <ClInclude Include="cube.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cube.psh" />
+    <FxCompile Include="cube.psh">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </FxCompile>
     <FxCompile Include="cube.vsh">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>

@@ -20,7 +20,7 @@ public:
 		      pGS_Shader(0), pCS_Shader(0), pInputLayout(0), pD3D11Device(0) {}
 	~Shader() {}
 
-	void init(ID3D11Device *pD3D11Device, HWND hWnd, const std::vector<D3D11_INPUT_ELEMENT_DESC> &vInputDesc);
+	void init(ID3D11Device *pD3D11Device, const std::vector<D3D11_INPUT_ELEMENT_DESC> &vInputDesc);
 
 	void attachVS(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel);
 	void attachHS(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel);
@@ -44,7 +44,6 @@ private:
 	std::vector<D3D11_INPUT_ELEMENT_DESC> vInputLayoutDesc;
 	ID3D11InputLayout  *pInputLayout;
 	ID3D11Device *pD3D11Device;
-	HWND hWnd;
 };
 
 

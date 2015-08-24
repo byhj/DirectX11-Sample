@@ -22,9 +22,9 @@ public:
 	void Update()   ;
 	void Render(ID3D11DeviceContext *pD3D11DeviceContext);
 	void Shutdown() ;
+	void init_camera(float width, float height, ID3D11DeviceContext *pD3D11DeviceContext);
 
 private:
-	void init_camera(ID3D11Device *pD3D11Deivce, ID3D11DeviceContext *pD3D11DeviceContext);
 	void init_object(ID3D11Device *pD3D11Deivce, ID3D11DeviceContext *pD3D11DeviceContext);
 
 private:

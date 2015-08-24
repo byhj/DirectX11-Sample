@@ -29,19 +29,21 @@ void RenderSystem::v_Render()
 
 	t = (timeCur-timeStart)/1000.0f;
 
-	XMMATRIX rotMat = XMMatrixRotationY(t/10.0f);
-	XMStoreFloat4x4(&m_Matrix.model, XMMatrixTranspose(rotMat));
-	m_Cube.Render(m_pD3D11DeviceContext, m_Matrix, 0.0f);
-
-	// 2nd Cube:  Rotate around origin
+	// Light
 	XMMATRIX mSpin = XMMatrixRotationZ(-t);
 	XMMATRIX mOrbit = XMMatrixRotationY(-t * 2.0f);
 	XMMATRIX mTranslate = XMMatrixTranslation(-3.0f, 0.0f, 0.0f);
 	XMMATRIX mScale = XMMatrixScaling(0.3f, 0.3f, 0.3f);
 	XMMATRIX worldCube = mScale * mSpin * mTranslate * mOrbit;
 	XMStoreFloat4x4(&m_Matrix.model, XMMatrixTranspose(worldCube));
-	m_Cube.Render(m_pD3D11DeviceContext, m_Matrix, 1.0f);
+	m_Cube.Render(m_pD3D11DeviceContext, m_Matrix, XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f) );
 
+	XMFLOAT4 lightPos = XMFLOAT4(m_Matrix.model._14, m_Matrix.model._24, m_Matrix.model._34, 0.0f);
+
+	//Object
+	XMMATRIX rotMat = XMMatrixRotationY(t/10.0f);
+	XMStoreFloat4x4(&m_Matrix.model, XMMatrixTranspose(rotMat));
+	m_Cube.Render(m_pD3D11DeviceContext, m_Matrix, lightPos);
 
 	EndScene();
 }
@@ -194,7 +196,7 @@ void RenderSystem::init_camera()
 
 void RenderSystem::init_object()
 {
-	m_Cube.Init(m_pD3D11Device, m_pD3D11DeviceContext, GetHwnd() );
+	m_Cube.Init(m_pD3D11Device, m_pD3D11DeviceContext );
 }
 
 void RenderSystem::BeginScene()

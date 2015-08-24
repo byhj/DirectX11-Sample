@@ -14,11 +14,11 @@ Triangle::~Triangle()
 
 }
 
-void Triangle::Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext, HWND hWnd)
+void Triangle::Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext)
 {
 
 	init_buffer(pD3D11Device, pD3D11DeviceContext);
-	init_shader(pD3D11Device, hWnd);
+	init_shader(pD3D11Device);
 }
 
 void Triangle::Update()
@@ -44,6 +44,8 @@ void Triangle::Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::Matri
 
 void Triangle::Shutdown()
 {
+	TriangleShader.end();
+
 	ReleaseCOM(m_pInputLayout)
 	ReleaseCOM(m_pVS)
 	ReleaseCOM(m_pPS)
@@ -142,7 +144,7 @@ void Triangle::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D
 
 }
 
-void Triangle::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
+void Triangle::init_shader(ID3D11Device *pD3D11Device)
 {
     std::vector<D3D11_INPUT_ELEMENT_DESC> vInputLayoutDesc;
 	D3D11_INPUT_ELEMENT_DESC inputLayoutDesc;
@@ -166,10 +168,9 @@ void Triangle::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
 	vInputLayoutDesc.push_back(inputLayoutDesc);
 
 
-	TriangleShader.init(pD3D11Device, hWnd, vInputLayoutDesc);
+	TriangleShader.init(pD3D11Device, vInputLayoutDesc);
 	TriangleShader.attachVS(L"triangle.vsh", "VS", "vs_5_0");
 	TriangleShader.attachPS(L"triangle.psh", "PS", "ps_5_0");
-	TriangleShader.end();
 }
 
 

@@ -21,13 +21,13 @@ public:
 
 public:
 	void Update();
-	void Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext, HWND hWnd);
-	void Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::MatrixBuffer &matrix, float isLight);
+	void Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext);
+	void Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::MatrixBuffer &matrix, const XMFLOAT4 &lightPos);
 	void Shutdown();
 
 private:
 	void init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext);
-	void init_shader(ID3D11Device *pD3D11Device, HWND hWnd);
+	void init_shader(ID3D11Device *pD3D11Device);
 
 	struct Vertex
 	{

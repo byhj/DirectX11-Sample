@@ -89,12 +89,14 @@ void RenderSystem::init_camera()
 	vp.Height   = static_cast<float>(m_ScreenHeight);
 	m_pD3D11DeviceContext->RSSetViewports(1, &vp);
 
+	float aspect = GetAspect();
+
 	//MVP Matrix
 	XMVECTOR camPos    = XMVectorSet(0.0f, 0.0f, -5.0f, 0.0f);
 	XMVECTOR camTarget = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 	XMVECTOR camUp     = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 	XMMATRIX View      = XMMatrixLookAtLH(camPos, camTarget, camUp);
-	XMMATRIX Proj      = XMMatrixPerspectiveFovLH(0.4f*3.14f, GetAspect(), 1.0f, 1000.0f);
+	XMMATRIX Proj      = XMMatrixPerspectiveFovLH(0.4f*3.14f, aspect, 1.0f, 1000.0f);
 	XMMATRIX Model     = XMMatrixIdentity();
 
 	XMStoreFloat4x4(&m_Matrix.model, XMMatrixTranspose(Model));
@@ -104,7 +106,7 @@ void RenderSystem::init_camera()
 
 void RenderSystem::init_object()
 {
-	m_Cube.Init(m_pD3D11Device, m_pD3D11DeviceContext, GetHwnd() );
+	m_Cube.Init(m_pD3D11Device, m_pD3D11DeviceContext );
 }
 
 void RenderSystem::BeginScene()

@@ -15,11 +15,11 @@ Cube::~Cube()
 
 }
 
-void Cube::Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext, HWND hWnd)
+void Cube::Init(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11DeviceContext)
 {
 
 	init_buffer(pD3D11Device, pD3D11DeviceContext);
-	init_shader(pD3D11Device, hWnd);
+	init_shader(pD3D11Device);
 	init_texture(pD3D11Device);
 }
 
@@ -57,6 +57,8 @@ void Cube::Render(ID3D11DeviceContext *pD3D11DeviceContext, const d3d::MatrixBuf
 
 void Cube::Shutdown()
 {
+	CubeShader.end();
+
 	ReleaseCOM(m_pInputLayout)
 	ReleaseCOM(m_pVS)
 	ReleaseCOM(m_pPS)
@@ -176,10 +178,9 @@ void Cube::init_buffer(ID3D11Device *pD3D11Device, ID3D11DeviceContext *pD3D11De
 	mvpDesc.MiscFlags      = 0;
 	hr = pD3D11Device->CreateBuffer(&mvpDesc, NULL, &m_pMVPBuffer);
 
-
 }
 
-void Cube::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
+void Cube::init_shader(ID3D11Device *pD3D11Device)
 {
     std::vector<D3D11_INPUT_ELEMENT_DESC> vInputLayoutDesc;
 	D3D11_INPUT_ELEMENT_DESC inputLayoutDesc;
@@ -203,10 +204,10 @@ void Cube::init_shader(ID3D11Device *pD3D11Device, HWND hWnd)
 	vInputLayoutDesc.push_back(inputLayoutDesc);
 
 
-	CubeShader.init(pD3D11Device, hWnd, vInputLayoutDesc);
+	CubeShader.init(pD3D11Device, vInputLayoutDesc);
 	CubeShader.attachVS(L"Cube.vsh", "VS", "vs_5_0");
 	CubeShader.attachPS(L"Cube.psh", "PS", "ps_5_0");
-	CubeShader.end();
+
 }
 
 void Cube::init_texture(ID3D11Device *pD3D11Device)

@@ -104,7 +104,7 @@ void RenderSystem::init_camera()
 
 void RenderSystem::init_object()
 {
-	m_Cube.Init(m_pD3D11Device, m_pD3D11DeviceContext, GetHwnd() );
+	m_Cube.Init(m_pD3D11Device, m_pD3D11DeviceContext );
 }
 
 void RenderSystem::BeginScene()

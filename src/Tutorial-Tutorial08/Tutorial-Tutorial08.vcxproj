@@ -66,16 +66,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\include\d3d\App.cpp" />
     <ClCompile Include="..\..\include\d3d\Shader.cpp" />
     <ClCompile Include="..\..\include\d3d\Utility.cpp" />
     <ClCompile Include="cube.cpp" />
+    <ClCompile Include="DXUT11.cpp" />
     <ClCompile Include="DXUTHelper.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="Tutorial08.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\d3d\App.h" />
     <ClInclude Include="..\..\include\d3d\Shader.h" />
     <ClInclude Include="..\..\include\d3d\Utility.h" />
     <ClInclude Include="..\..\include\DXUT\Core\DDSTextureLoader.h" />
@@ -95,6 +94,7 @@
     <ClInclude Include="..\..\include\DXUT\Optional\SDKmesh.h" />
     <ClInclude Include="..\..\include\DXUT\Optional\SDKmisc.h" />
     <ClInclude Include="cube.h" />
+    <ClInclude Include="DXUT11.h" />
     <ClInclude Include="DXUTHelper.h" />
     <ClInclude Include="RenderSystem.h" />
   </ItemGroup>

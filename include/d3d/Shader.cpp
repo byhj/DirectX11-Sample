@@ -9,10 +9,9 @@ namespace d3d
 {
 
 
-void Shader::init(ID3D11Device *pD3D11Device, HWND hWndconst, const std::vector<D3D11_INPUT_ELEMENT_DESC> &vInputDesc)
+void Shader::init(ID3D11Device *pD3D11Device, const std::vector<D3D11_INPUT_ELEMENT_DESC> &vInputDesc)
 {
 	this->pD3D11Device = pD3D11Device;
-	this->hWnd = hWnd;
 	this->vInputLayoutDesc = vInputDesc;
 
 }
@@ -149,7 +148,6 @@ void Shader::attachPS(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderMod
 	ID3DBlob* PixelShaderBuffer = 0;
 
 
-
 	CompileShaderFromFile(szFileName, szEntryPoint, szShaderModel, &PixelShaderBuffer);
 
 	// Create the vertex shader from the buffer.
@@ -182,7 +180,6 @@ void Shader::use(ID3D11DeviceContext *pD3D11DeviceContext)
 void Shader::end()
 {
 	pD3D11Device = 0;
-	hWnd = 0;
 	ReleaseCOM(pInputLayout)
 	ReleaseCOM(pVS_Shader)
 	ReleaseCOM(pHS_Shader)
