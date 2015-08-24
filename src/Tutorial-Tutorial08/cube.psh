@@ -1,0 +1,17 @@
+
+struct VS_OUT
+{
+    float4 Pos : SV_POSITION;
+    float4 Tex : TEXCOORD;
+};
+
+Texture2D seaFloorTex  :register(t0);
+SamplerState samLinear :register(s0);
+
+float4 PS(VS_OUT vs_out) : SV_TARGET
+{
+   float4 texColor = seaFloorTex.Sample(samLinear, vs_out.Tex);
+
+   return texColor;
+
+}

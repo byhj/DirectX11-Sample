@@ -1,5 +1,6 @@
 #include "Shader.h"
 #include <d3dcompiler.h>
+#include "d3d/Utility.h"
 
 namespace byhj
 {
@@ -182,6 +183,13 @@ void Shader::end()
 {
 	pD3D11Device = 0;
 	hWnd = 0;
+	ReleaseCOM(pInputLayout)
+	ReleaseCOM(pVS_Shader)
+	ReleaseCOM(pHS_Shader)
+	ReleaseCOM(pDS_Shader)
+	ReleaseCOM(pGS_Shader)
+	ReleaseCOM(pCS_Shader)
+	ReleaseCOM(pPS_Shader)
 }
 
 }
