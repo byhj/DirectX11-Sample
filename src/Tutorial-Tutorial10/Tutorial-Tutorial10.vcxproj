@@ -65,6 +65,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\d3d\Shader.h" />
+    <ClInclude Include="..\..\include\d3d\Utility.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\DDSTextureLoader.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\dxerr.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\DXUT.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\DXUTDevice11.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\DXUTmisc.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\ScreenGrab.h" />
+    <ClInclude Include="..\..\include\DXUT\Core\WICTextureLoader.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTcamera.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTgui.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTguiIME.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTLockFreePipe.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTres.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTsettingsdlg.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\ImeUi.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\SDKmesh.h" />
+    <ClInclude Include="..\..\include\DXUT\Optional\SDKmisc.h" />
+    <ClInclude Include="DXUTHelper.h" />
+    <ClInclude Include="model.h" />
+    <ClInclude Include="RenderSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="model.psh" />
+    <None Include="model.vsh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\d3d\Shader.cpp" />
+    <ClCompile Include="..\..\include\d3d\Utility.cpp" />
+    <ClCompile Include="DXUTHelper.cpp" />
+    <ClCompile Include="model.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="Tutorial10.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

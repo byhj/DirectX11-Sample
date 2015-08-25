@@ -13,5 +13,110 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DXUT">
+      <UniqueIdentifier>{ae65cf41-54c0-4b15-8238-946f52aca6ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUT\Core">
+      <UniqueIdentifier>{f0d06443-cbdc-45da-8388-c68c895a24bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUT\Optional">
+      <UniqueIdentifier>{5a958662-df8a-4555-b830-3c5611b88786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{52ae5a4f-0841-44b5-95d7-3ab2ac741369}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUTHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\DDSTextureLoader.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\dxerr.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\DXUT.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\DXUTDevice11.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\DXUTmisc.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\ScreenGrab.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Core\WICTextureLoader.h">
+      <Filter>DXUT\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTcamera.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTgui.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTguiIME.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTLockFreePipe.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTres.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\DXUTsettingsdlg.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\ImeUi.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\SDKmesh.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\DXUT\Optional\SDKmisc.h">
+      <Filter>DXUT\Optional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\d3d\Shader.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\d3d\Utility.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="model.psh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="model.vsh">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUTHelper.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tutorial10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\d3d\Shader.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\d3d\Utility.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

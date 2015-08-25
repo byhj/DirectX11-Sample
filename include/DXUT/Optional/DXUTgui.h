@@ -11,7 +11,7 @@
 // http://go.microsoft.com/fwlink/?LinkId=320437
 //--------------------------------------------------------------------------------------
 #pragma once
-
+#include "DXUT.h"
 #include <usp10.h>
 #include <dimm.h>
 

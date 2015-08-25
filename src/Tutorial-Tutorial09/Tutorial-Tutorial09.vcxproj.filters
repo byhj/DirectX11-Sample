@@ -39,9 +39,6 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="DXUT11.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="Tutorial09.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -103,9 +100,6 @@
     </ClInclude>
     <ClInclude Include="..\..\include\DXUT\Optional\SDKmisc.h">
       <Filter>DXUT\Optional</Filter>
-    </ClInclude>
-    <ClInclude Include="DXUT11.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DXUTHelper.h">
       <Filter>Header Files</Filter>
