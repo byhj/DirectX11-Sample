@@ -20,6 +20,7 @@
 
 #undef D3DCOLOR_ARGB
 #include <d3d9.h>
+#include <vector>
 
 //--------------------------------------------------------------------------------------
 // Hard Defines for the various structures

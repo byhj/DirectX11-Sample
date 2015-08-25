@@ -16,6 +16,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+#DirectX
+*.dds
+*.sdkmesh
+*.x
 
 #VS Debug
 *.obj
