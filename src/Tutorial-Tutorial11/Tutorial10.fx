@@ -63,7 +63,7 @@ BlendState NoBlending
 PS_INPUT VS(VS_INPUT input)
 {
 	PS_INPUT output = ( PS_INPUT )0;
-
+	 
 	output.Pos = mul(float4(input.Pos, 1.0f), Model);
 
 	output.Pos.x += sin(output.Pos.y * 0.1f + Time) * Waviness;
