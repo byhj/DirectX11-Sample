@@ -305,7 +305,7 @@ void CALLBACK DXUTHelper::AppFrameMove(double fTime, float fElapsedTime, void* p
 	XMMATRIX mRot = XMMatrixRotationX(XMConvertToRadians(-90.0f));
 	World = mRot * World;
 
-	XMStoreFloat4x4(&m_Matrix.model, XMMatrixTranspose(World) );
+	XMStoreFloat4x4(&m_Matrix.model, World);
 
 	m_RenderSystem.Update();
 }
@@ -333,8 +333,8 @@ void CALLBACK DXUTHelper::AppD3D11FrameRender(ID3D11Device* pd3dDevice, ID3D11De
 
 	XMMATRIX View = m_Camera.GetViewMatrix();
 	XMMATRIX Proj = m_Camera.GetProjMatrix();
-	XMStoreFloat4x4(&m_Matrix.view, XMMatrixTranspose(View) );
-	XMStoreFloat4x4(&m_Matrix.proj, XMMatrixTranspose(Proj) );
+	XMStoreFloat4x4(&m_Matrix.view, View );
+	XMStoreFloat4x4(&m_Matrix.proj, Proj );
 	
 	m_RenderSystem.Render(pd3dImmediateContext, m_Matrix, fTime, m_fModelWaviness);
 
