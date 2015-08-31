@@ -96,7 +96,7 @@
     <ClCompile Include="Tutorial11.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Tutorial10.fx">
+    <FxCompile Include="Tutorial11.fx">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </FxCompile>
   </ItemGroup>

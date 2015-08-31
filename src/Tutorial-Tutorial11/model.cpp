@@ -112,7 +112,7 @@ void Model::init_shader(ID3D11Device *pD3D11Device)
 
 	// Read the D3DX effect file
 	HRESULT hr = S_OK;
-	D3DX11CompileEffectFromFile(L"tutorial10.fx", nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, dwShaderFlags, 0, pD3D11Device, &m_pEffect, nullptr) ;
+	D3DX11CompileEffectFromFile(L"tutorial11.fx", nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, dwShaderFlags, 0, pD3D11Device, &m_pEffect, nullptr) ;
 
 #else
 
