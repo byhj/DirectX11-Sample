@@ -20,6 +20,7 @@ $RECYCLE.BIN/
 *.dds
 *.sdkmesh
 *.x
+*.wav
 
 #VS Debug
 *.obj

@@ -112,7 +112,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Tutorial10.fx">
+    <FxCompile Include="Tutorial11.fx">
       <Filter>Resource Files</Filter>
     </FxCompile>
   </ItemGroup>
