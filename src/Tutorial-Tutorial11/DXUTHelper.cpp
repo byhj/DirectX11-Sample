@@ -324,7 +324,7 @@ void CALLBACK DXUTHelper::AppD3D11FrameRender(ID3D11Device* pd3dDevice, ID3D11De
 	}
 
 	// Clear render target and the depth stencil 
-	float ClearColor[4] ={ 0.2f, 0.3f, 1.0f, 0.0f };
+	float ClearColor[4] ={ 0.2f, 0.0f, 1.0f, 0.0f };
 
 	ID3D11RenderTargetView* pRTV = DXUTGetD3D11RenderTargetView();
 	ID3D11DepthStencilView* pDSV = DXUTGetD3D11DepthStencilView();

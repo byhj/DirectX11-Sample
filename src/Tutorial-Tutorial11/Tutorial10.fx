@@ -7,23 +7,18 @@ SamplerState samLinear
 	AddressV = Wrap;
 };
 
-cbuffer cbConstant
-{
-	float3 vLightDir = float3(-0.577, 0.577, -0.577);
-};
-
 cbuffer cbChangesEveryFrame
 {
 	matrix Model;
 	matrix View;
 	matrix Proj;
-
-	float  Time;
 };
 
 cbuffer cbUserChanges
-{
-	float Waviness;
+{	
+	float3 vLightDir = float3(-0.577, 0.577, -0.577);
+    float  Time;
+	float  Waviness;
 };
 
 struct VS_INPUT
@@ -62,7 +57,7 @@ BlendState NoBlending
 //--------------------------------------------------------------------------------------
 PS_INPUT VS(VS_INPUT input)
 {
-	PS_INPUT output = ( PS_INPUT )0;
+	PS_INPUT output;
 
 	output.Pos = mul(float4(input.Pos, 1.0f), Model);
 
@@ -84,9 +79,9 @@ PS_INPUT VS(VS_INPUT input)
 float4 PS(PS_INPUT input): SV_Target
 {
 	// Calculate lighting assuming light color is <1,1,1,1>
-	float fLighting = saturate(dot(input.Norm, vLightDir));
+	float fLighting = saturate( dot(input.Norm, vLightDir) );
 	float4 outputColor = texDiffuse.Sample(samLinear, input.Tex) * fLighting;
-	outputColor.a = 1;
+	outputColor.a = 1.0f;
 
 	return outputColor;
 }
@@ -103,8 +98,8 @@ technique11 Render
 	  SetGeometryShader(NULL);
 	  SetPixelShader(CompileShader(ps_4_0, PS()));
 	  
-	  SetDepthStencilState(EnableDepth, 0);
-	  SetBlendState(NoBlending, float4(0.0f, 0.0f, 0.0f, 0.0f), 0xFFFFFFFF);
+	 // SetDepthStencilState(EnableDepth, 0);
+	  //SetBlendState(NoBlending, float4(0.0f, 0.0f, 0.0f, 0.0f), 0xFFFFFFFF);
     }
 
 }
